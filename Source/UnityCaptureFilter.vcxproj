@@ -22,6 +22,7 @@
     <ProjectName>UnityCaptureFilter</ProjectName>
     <RootNamespace>UnityCaptureFilter</RootNamespace>
     <ProjectGuid>{3D0A9889-9EC1-4012-9382-4FE1EB610D28}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Label="Configuration">
@@ -50,6 +51,9 @@
     <LocalDebuggerCommand>$(ProgramW6432)\OBSStudio\bin\x64\obs64.exe</LocalDebuggerCommand>
     <LocalDebuggerWorkingDirectory>$(ProgramW6432)\OBSStudio\bin\x64</LocalDebuggerWorkingDirectory>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>C:\Program Files %28x86%29\Windows Kits\10\Include\10.0.15063.0\ucrt;C:\Program Files %28x86%29\Windows Kits\10\Include\10.0.15063.0\um;C:\Program Files %28x86%29\Windows Kits\10\Include\10.0.15063.0\shared;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup>
     <ClCompile>
