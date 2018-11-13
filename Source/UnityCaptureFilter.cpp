@@ -745,10 +745,10 @@ private:
 		pCaps->MinOutputSize.cy   = 4;
 		pCaps->MaxOutputSize.cx   = pvi->bmiHeader.biWidth;
 		pCaps->MaxOutputSize.cy   = pvi->bmiHeader.biHeight;
-		pCaps->MinFrameInterval = 10000000 / 120;
+		pCaps->MinFrameInterval = 10000000 / 60;
 		pCaps->MaxFrameInterval = 10000000 / 30;
 		pCaps->MinBitsPerSecond = pCaps->MinOutputSize.cx * pCaps->MinOutputSize.cy * pvi->bmiHeader.biBitCount * 30;
-		pCaps->MaxBitsPerSecond = pCaps->MaxOutputSize.cx * pCaps->MaxOutputSize.cy * pvi->bmiHeader.biBitCount * 120;
+		pCaps->MaxBitsPerSecond = pCaps->MaxOutputSize.cx * pCaps->MaxOutputSize.cy * pvi->bmiHeader.biBitCount * 60;
 		DebugLog("[GetStreamCaps] Index: %d - MINWIDTH: %d - MINHEIGHT: %d - MAXWIDTH: %d - MAXHEIGHT: %d - BITS: %d - TPS: %d - SIZEIMAGE: %d - SIZECALC: %d\n", iIndex, (int)pCaps->MinOutputSize.cx, (int)pCaps->MinOutputSize.cy, (int)pCaps->MaxOutputSize.cx, (int)pCaps->MaxOutputSize.cy, (int)pvi->bmiHeader.biBitCount, (int)pvi->AvgTimePerFrame, (int)pvi->bmiHeader.biSizeImage, (int)DIBSIZE(pvi->bmiHeader));
 		return S_OK;
 	}

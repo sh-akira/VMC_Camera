@@ -41,8 +41,8 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup>
-    <TargetName Condition="'$(Platform)'=='x64'">UnityCaptureFilter64bit</TargetName>
-    <TargetName Condition="'$(Platform)'=='Win32'">UnityCaptureFilter32bit</TargetName>
+    <TargetName Condition="'$(Platform)'=='x64'">VMC_CameraFilter64bit</TargetName>
+    <TargetName Condition="'$(Platform)'=='Win32'">VMC_CameraFilter32bit</TargetName>
     <OutDir>Build\$(Configuration)-$(TargetName)\</OutDir>
     <IntDir>$(OutDir)</IntDir>
     <GenerateManifest>false</GenerateManifest>
