@@ -19,8 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectName>UnityCaptureFilter</ProjectName>
-    <RootNamespace>UnityCaptureFilter</RootNamespace>
+    <ProjectName>VMC_CameraFilter</ProjectName>
+    <RootNamespace>VMC_CameraFilter</RootNamespace>
     <ProjectGuid>{3D0A9889-9EC1-4012-9382-4FE1EB610D28}</ProjectGuid>
     <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -100,10 +100,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Streams.cpp" />
-    <ClCompile Include="UnityCaptureFilter.cpp" />
+    <ClCompile Include="VMC_CameraFilter.cpp" />
     <None Include="shared.inl" />
     <None Include="Streams.h" />
-    <None Include="UnityCaptureFilter.def" />
+    <None Include="VMC_CameraFilter.def" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
 </Project>

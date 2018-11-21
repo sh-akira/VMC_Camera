@@ -98,10 +98,10 @@ private:
 		UCASSERT(m_CapNum <= MAX_CAPNUM);
 		if (m_CapNum > MAX_CAPNUM) m_CapNum = MAX_CAPNUM;
 		char CSCapNumChar = (m_CapNum ? '0' + m_CapNum : '\0'); //use NULL terminator for CapNum 0 to be compatible with old filter DLLs before multi cap
-		char CS_NAME_MUTEX      [] = "UnityCapture_Mutx0"; CS_NAME_MUTEX      [sizeof(CS_NAME_MUTEX      ) - 2] = CSCapNumChar;
-		char CS_NAME_EVENT_WANT [] = "UnityCapture_Want0"; CS_NAME_EVENT_WANT [sizeof(CS_NAME_EVENT_WANT ) - 2] = CSCapNumChar;
-		char CS_NAME_EVENT_SENT [] = "UnityCapture_Sent0"; CS_NAME_EVENT_SENT [sizeof(CS_NAME_EVENT_SENT ) - 2] = CSCapNumChar;
-		char CS_NAME_SHARED_DATA[] = "UnityCapture_Data0"; CS_NAME_SHARED_DATA[sizeof(CS_NAME_SHARED_DATA) - 2] = CSCapNumChar;
+		char CS_NAME_MUTEX      [] = "VMC_Camera_Mutx0"; CS_NAME_MUTEX      [sizeof(CS_NAME_MUTEX      ) - 2] = CSCapNumChar;
+		char CS_NAME_EVENT_WANT [] = "VMC_Camera_Want0"; CS_NAME_EVENT_WANT [sizeof(CS_NAME_EVENT_WANT ) - 2] = CSCapNumChar;
+		char CS_NAME_EVENT_SENT [] = "VMC_Camera_Sent0"; CS_NAME_EVENT_SENT [sizeof(CS_NAME_EVENT_SENT ) - 2] = CSCapNumChar;
+		char CS_NAME_SHARED_DATA[] = "VMC_Camera_Data0"; CS_NAME_SHARED_DATA[sizeof(CS_NAME_SHARED_DATA) - 2] = CSCapNumChar;
 
 		if (!m_hMutex)
 		{

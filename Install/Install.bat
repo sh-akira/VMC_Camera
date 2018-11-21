@@ -23,6 +23,6 @@ if '%errorlevel%' NEQ '0' (
 :gotAdmin
     pushd "%CD%"
     CD /D "%~dp0"
-    regsvr32 "UnityCaptureFilter32bit.dll"
-    regsvr32 "UnityCaptureFilter64bit.dll"
+    regsvr32 "VMC_CameraFilter32bit.dll"
+    regsvr32 "VMC_CameraFilter64bit.dll"
 :--------------------------------------

@@ -25,7 +25,7 @@ if '%errorlevel%' NEQ '0' (
     CD /D "%~dp0"
     set /P "UCNUMCAP=Enter number of capture devices you want to register: "
     echo "Installing %UCNUMCAP% capture devices ..."
-    regsvr32 "UnityCaptureFilter32bit.dll" "/i:UnityCaptureDevices=%UCNUMCAP%"
-    regsvr32 "UnityCaptureFilter64bit.dll" "/i:UnityCaptureDevices=%UCNUMCAP%"
+    regsvr32 "VMC_CameraFilter32bit.dll" "/i:UnityCaptureDevices=%UCNUMCAP%"
+    regsvr32 "VMC_CameraFilter64bit.dll" "/i:UnityCaptureDevices=%UCNUMCAP%"
     echo "Done"
 :--------------------------------------
