@@ -397,6 +397,10 @@ private:
 		{
 			WorkersRunning = 0;
 			for (size_t i = 0; i != WORKERCOUNT; i++) NewJobSemaphore.Post(); //wake up all threads
+			for (size_t i = 0; i != WORKERCOUNT; i++)
+			{
+				Threads[i].Stop();
+			}
 		}
 	
 		void StartNewJob(ProcessJob NewJob)
@@ -423,9 +427,80 @@ private:
 
 	private:
 		//Wrapper objects for Windows concurrency objects (thread, mutex, semaphore)
-		struct sThread { typedef DWORD (WINAPI *FUNC_t)(LPVOID); sThread() : h(0) {} sThread(FUNC_t f, void* p = NULL) : h(0) { Start(f, p); } void Start(FUNC_t f, void* p = NULL) { if (h) this->~sThread(); h = CreateThread(0,0,f,p,0,0); } ~sThread() { if (h) { WaitForSingleObject(h, INFINITE); CloseHandle(h); } } private:HANDLE h;sThread(const sThread&);sThread& operator=(const sThread&);};
-		struct sMutex { sMutex() : h(CreateMutexA(0,0,0)) {} ~sMutex() { CloseHandle(h); } __inline void Lock() { WaitForSingleObject(h,INFINITE); } __inline void Unlock() { ReleaseMutex(h); } private:HANDLE h;sMutex(const sMutex&);sMutex& operator=(const sMutex&);};
-		struct sSemaphore { sSemaphore() : h(CreateSemaphoreA(0,0,32768,0)) {} ~sSemaphore() { CloseHandle(h); } __inline void Post() { ReleaseSemaphore(h, 1, 0); } __inline bool WaitForPost() { return WaitForSingleObject(h,INFINITE) == WAIT_OBJECT_0; } private:HANDLE h;sSemaphore(const sSemaphore&);sSemaphore& operator=(const sSemaphore&);};
+		struct sThread
+		{
+			typedef DWORD(WINAPI* FUNC_t)(LPVOID);
+			sThread() : h(0)
+			{
+			}
+			sThread(FUNC_t f, void* p = NULL) : h(0)
+			{
+				Start(f, p);
+			}
+			void Start(FUNC_t f, void* p = NULL)
+			{
+				if (h)
+					this->~sThread();
+				h = CreateThread(0, 0, f, p, 0, 0);
+			}
+			void Stop()
+			{
+				if (h)
+				{
+					WaitForSingleObject(h, INFINITE);
+					CloseHandle(h);
+					h = 0;
+				}
+			}
+			~sThread()
+			{
+				if (h)
+				{
+					WaitForSingleObject(h, INFINITE);
+					CloseHandle(h);
+				}
+			}
+		private:
+			HANDLE h;
+			sThread(const sThread&);
+			sThread& operator=(const sThread&);
+		};
+
+		struct sMutex
+		{
+			sMutex() : h(CreateMutexA(0, 0, 0)) {}
+			~sMutex() { CloseHandle(h); }
+			__inline void Lock()
+			{
+				WaitForSingleObject(h, INFINITE);
+			}
+			__inline void Unlock()
+			{
+				ReleaseMutex(h);
+			}
+		private:
+			HANDLE h;
+			sMutex(const sMutex&);
+			sMutex& operator=(const sMutex&);
+		};
+
+		struct sSemaphore
+		{
+			sSemaphore() : h(CreateSemaphoreA(0, 0, 32768, 0)) {}
+			~sSemaphore() { CloseHandle(h); }
+			__inline void Post()
+			{
+				ReleaseSemaphore(h, 1, 0);
+			}
+			__inline bool WaitForPost()
+			{
+				return WaitForSingleObject(h, INFINITE) == WAIT_OBJECT_0;
+			}
+		private:
+			HANDLE h;
+			sSemaphore(const sSemaphore&);
+			sSemaphore& operator=(const sSemaphore&);
+		};
 
 		enum { WORKERCOUNT = 3 };
 		sMutex JobsMutex;
