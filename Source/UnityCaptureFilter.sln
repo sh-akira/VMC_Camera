@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33027.164
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnityCaptureFilter", "UnityCaptureFilter.vcxproj", "{3D0A9889-9EC1-4012-9382-4FE1EB610D28}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VMC_CameraFilter", "UnityCaptureFilter.vcxproj", "{3D0A9889-9EC1-4012-9382-4FE1EB610D28}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +24,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {36080C86-E1E6-46D9-AFC6-BDEE214BEEE6}
 	EndGlobalSection
 EndGlobal
