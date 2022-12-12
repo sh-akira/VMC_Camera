@@ -1,10 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33027.164
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnityCaptureFilter", "UnityCaptureFilter.vcxproj", "{3D0A9889-9EC1-4012-9382-4FE1EB610D28}"
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnityCapturePlugin", "UnityCapturePlugin.vcxproj", "{727D3AC5-27B5-4288-A475-7A471ECD71B8}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VMC_CameraFilter", "UnityCaptureFilter.vcxproj", "{3D0A9889-9EC1-4012-9382-4FE1EB610D28}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VMC_CameraPlugin", "UnityCapturePlugin.vcxproj", "{727D3AC5-27B5-4288-A475-7A471ECD71B8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,5 +34,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F47F1260-6C6A-4C2B-BD06-8562D713CD30}
 	EndGlobalSection
 EndGlobal
